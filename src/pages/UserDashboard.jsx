@@ -6,6 +6,7 @@ import {
   HiTrendingUp,
   HiUser,
 } from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
 import {
   LineChart,
   Line,
@@ -18,6 +19,13 @@ import {
 import { lastUser, userCourses, watchTime } from '../data';
 
 function UserDashboard() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('level');
+    navigate('/login');
+  };
   return (
     <div className='flex'>
       <aside className='sticky top-0 w-1/4 h-screen bg-yellow-500 border-0 border-r-2'>
@@ -62,12 +70,12 @@ function UserDashboard() {
             >
               <HiAdjustments className='inline-block mr-2' size={20} /> Settings
             </a>
-            <a
-              href='#'
+            <p
               className='p-2 mt-auto mb-4 leading-none text-white align-bottom rounded-md cursor-pointer hover:bg-white hover:text-yellow-500 active:bg-white active:text-yellow-500'
+              onClick={handleLogout}
             >
               <HiLogout className='inline-block mr-2' size={20} /> Logout
-            </a>
+            </p>
           </div>
         </div>
       </aside>
