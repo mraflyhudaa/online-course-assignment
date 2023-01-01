@@ -68,7 +68,6 @@ function Register() {
               id='name'
               name='name'
               type='text'
-              autoComplete='name'
               onChange={onChange}
               required
             />
@@ -78,7 +77,6 @@ function Register() {
               id='email-address'
               name='email'
               type='email'
-              autoComplete='email'
               onChange={onChange}
               required
             />
@@ -88,7 +86,6 @@ function Register() {
               id='password'
               name='password'
               type='password'
-              autoComplete='current-password'
               onChange={onChange}
               required
             />
@@ -98,7 +95,6 @@ function Register() {
               id='password2'
               name='password2'
               type='password'
-              autoComplete='current-password'
               onChange={onChange}
               required
             />
