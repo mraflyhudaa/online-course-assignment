@@ -40,7 +40,11 @@ function Login() {
         if (password == data[i].password) {
           localStorage.setItem('level', data[i].level);
           localStorage.setItem('token', true);
-          navigate('/');
+          if (data[i].level === 'admin') {
+            navigate('/admin', { state: { level: 'admin' } });
+          } else {
+            navigate('/', { state: { level: 'user' } });
+          }
         } else {
           console.log('failed');
         }

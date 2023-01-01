@@ -8,14 +8,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
-  const level = localStorage.getItem('level');
   return (
     <>
       <Router>
         <Routes>
           <Route element={<PrivateRoutes />}>
-            {level === 'user' && <Route path='/' element={<UserDashboard />} />}
-            <Route path='/' element={<AdminDashboard />} />
+            <Route path='/' element={<UserDashboard />} />
+            <Route path='/admin' element={<AdminDashboard />} />
           </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
